@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+        100000000000000000000125 = {isa = PBXBuildFile; fileRef = 100000000000000000000026; };
+        100000000000000000000126 = {isa = PBXBuildFile; fileRef = 100000000000000000000027; };
+        100000000000000000000127 = {isa = PBXBuildFile; fileRef = 100000000000000000000028; };
+		100000000000000000000124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000025 /* Assets.xcassets */; };
+		100000000000000000000101 /* DevLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* DevLogApp.swift */; };
+		100000000000000000000102 /* DevLogRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* DevLogRootView.swift */; };
+		100000000000000000000103 /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* DSColor.swift */; };
+		100000000000000000000104 /* DSSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* DSSpacing.swift */; };
+		100000000000000000000105 /* DSRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* DSRadius.swift */; };
+		100000000000000000000106 /* DSTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* DSTypography.swift */; };
+		100000000000000000000107 /* SurfaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* SurfaceCard.swift */; };
+		100000000000000000000108 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* BadgeView.swift */; };
+		100000000000000000000109 /* StatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000009 /* StatItem.swift */; };
+		100000000000000000000110 /* GitHubModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* GitHubModels.swift */; };
+		100000000000000000000111 /* GitHubActivityServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000011 /* GitHubActivityServicing.swift */; };
+		100000000000000000000112 /* GitHubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000012 /* GitHubAPIClient.swift */; };
+		100000000000000000000113 /* MockGitHubActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000013 /* MockGitHubActivityService.swift */; };
+		100000000000000000000114 /* DailySummaryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000014 /* DailySummaryCard.swift */; };
+		100000000000000000000115 /* RepositoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000015 /* RepositoryRow.swift */; };
+		100000000000000000000116 /* ActivityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000016 /* ActivityRow.swift */; };
+		100000000000000000000117 /* ActivityCalendarGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000017 /* ActivityCalendarGrid.swift */; };
+		100000000000000000000118 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000018 /* TodayViewModel.swift */; };
+		100000000000000000000119 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000019 /* TodayView.swift */; };
+		100000000000000000000120 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000020 /* CalendarViewModel.swift */; };
+		100000000000000000000121 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000021 /* CalendarView.swift */; };
+		100000000000000000000122 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000022 /* ProjectsViewModel.swift */; };
+		100000000000000000000123 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000023 /* ProjectsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        100000000000000000000026 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/GitHubAuthentication.swift; sourceTree = "<group>"; };
+        100000000000000000000027 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/GitHubContributionsService.swift; sourceTree = "<group>"; };
+        100000000000000000000028 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/GitHubAccountView.swift; sourceTree = "<group>"; };
+		100000000000000000000025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		100000000000000000000001 /* DevLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/DevLogApp.swift; sourceTree = "<group>"; };
+		100000000000000000000002 /* DevLogRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/DevLogRootView.swift; sourceTree = "<group>"; };
+		100000000000000000000003 /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Foundation/DSColor.swift; sourceTree = "<group>"; };
+		100000000000000000000004 /* DSSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Foundation/DSSpacing.swift; sourceTree = "<group>"; };
+		100000000000000000000005 /* DSRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Foundation/DSRadius.swift; sourceTree = "<group>"; };
+		100000000000000000000006 /* DSTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Foundation/DSTypography.swift; sourceTree = "<group>"; };
+		100000000000000000000007 /* SurfaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Components/SurfaceCard.swift; sourceTree = "<group>"; };
+		100000000000000000000008 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Components/BadgeView.swift; sourceTree = "<group>"; };
+		100000000000000000000009 /* StatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Components/StatItem.swift; sourceTree = "<group>"; };
+		100000000000000000000010 /* GitHubModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain/GitHubModels.swift; sourceTree = "<group>"; };
+		100000000000000000000011 /* GitHubActivityServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/GitHubActivityServicing.swift; sourceTree = "<group>"; };
+		100000000000000000000012 /* GitHubAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/GitHubAPIClient.swift; sourceTree = "<group>"; };
+		100000000000000000000013 /* MockGitHubActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/MockGitHubActivityService.swift; sourceTree = "<group>"; };
+		100000000000000000000014 /* DailySummaryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Patterns/DailySummaryCard.swift; sourceTree = "<group>"; };
+		100000000000000000000015 /* RepositoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Patterns/RepositoryRow.swift; sourceTree = "<group>"; };
+		100000000000000000000016 /* ActivityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Patterns/ActivityRow.swift; sourceTree = "<group>"; };
+		100000000000000000000017 /* ActivityCalendarGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem/Patterns/ActivityCalendarGrid.swift; sourceTree = "<group>"; };
+		100000000000000000000018 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Today/TodayViewModel.swift; sourceTree = "<group>"; };
+		100000000000000000000019 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Today/TodayView.swift; sourceTree = "<group>"; };
+		100000000000000000000020 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Calendar/CalendarViewModel.swift; sourceTree = "<group>"; };
+		100000000000000000000021 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Calendar/CalendarView.swift; sourceTree = "<group>"; };
+		100000000000000000000022 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Projects/ProjectsViewModel.swift; sourceTree = "<group>"; };
+		100000000000000000000023 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Projects/ProjectsView.swift; sourceTree = "<group>"; };
+		100000000000000000000024 /* DevLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		100000000000000000000201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		100000000000000000000301 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000302 /* DevLog */,
+				100000000000000000000303 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		100000000000000000000302 /* DevLog */ = {
+			isa = PBXGroup;
+			children = (
+                100000000000000000000026,
+                100000000000000000000027,
+                100000000000000000000028,
+				100000000000000000000025 /* Assets.xcassets */,
+				100000000000000000000001 /* DevLogApp.swift */,
+				100000000000000000000002 /* DevLogRootView.swift */,
+				100000000000000000000003 /* DSColor.swift */,
+				100000000000000000000004 /* DSSpacing.swift */,
+				100000000000000000000005 /* DSRadius.swift */,
+				100000000000000000000006 /* DSTypography.swift */,
+				100000000000000000000007 /* SurfaceCard.swift */,
+				100000000000000000000008 /* BadgeView.swift */,
+				100000000000000000000009 /* StatItem.swift */,
+				100000000000000000000010 /* GitHubModels.swift */,
+				100000000000000000000011 /* GitHubActivityServicing.swift */,
+				100000000000000000000012 /* GitHubAPIClient.swift */,
+				100000000000000000000013 /* MockGitHubActivityService.swift */,
+				100000000000000000000014 /* DailySummaryCard.swift */,
+				100000000000000000000015 /* RepositoryRow.swift */,
+				100000000000000000000016 /* ActivityRow.swift */,
+				100000000000000000000017 /* ActivityCalendarGrid.swift */,
+				100000000000000000000018 /* TodayViewModel.swift */,
+				100000000000000000000019 /* TodayView.swift */,
+				100000000000000000000020 /* CalendarViewModel.swift */,
+				100000000000000000000021 /* CalendarView.swift */,
+				100000000000000000000022 /* ProjectsViewModel.swift */,
+				100000000000000000000023 /* ProjectsView.swift */,
+			);
+			path = DevLog;
+			sourceTree = "<group>";
+		};
+		100000000000000000000303 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000024 /* DevLog.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		100000000000000000000401 /* DevLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000701 /* Build configuration list for PBXNativeTarget "DevLog" */;
+			buildPhases = (
+				100000000000000000000501 /* Sources */,
+				100000000000000000000201 /* Frameworks */,
+				100000000000000000000502 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DevLog;
+			productName = DevLog;
+			productReference = 100000000000000000000024 /* DevLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100000000000000000000601 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					100000000000000000000401 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = 100000000000000000000702 /* Build configuration list for PBXProject "DevLog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 100000000000000000000301;
+			productRefGroup = 100000000000000000000303 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				100000000000000000000401 /* DevLog */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		100000000000000000000502 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000124 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		100000000000000000000501 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+                100000000000000000000125,
+                100000000000000000000126,
+                100000000000000000000127,
+				100000000000000000000101 /* DevLogApp.swift in Sources */,
+				100000000000000000000102 /* DevLogRootView.swift in Sources */,
+				100000000000000000000103 /* DSColor.swift in Sources */,
+				100000000000000000000104 /* DSSpacing.swift in Sources */,
+				100000000000000000000105 /* DSRadius.swift in Sources */,
+				100000000000000000000106 /* DSTypography.swift in Sources */,
+				100000000000000000000107 /* SurfaceCard.swift in Sources */,
+				100000000000000000000108 /* BadgeView.swift in Sources */,
+				100000000000000000000109 /* StatItem.swift in Sources */,
+				100000000000000000000110 /* GitHubModels.swift in Sources */,
+				100000000000000000000111 /* GitHubActivityServicing.swift in Sources */,
+				100000000000000000000112 /* GitHubAPIClient.swift in Sources */,
+				100000000000000000000113 /* MockGitHubActivityService.swift in Sources */,
+				100000000000000000000114 /* DailySummaryCard.swift in Sources */,
+				100000000000000000000115 /* RepositoryRow.swift in Sources */,
+				100000000000000000000116 /* ActivityRow.swift in Sources */,
+				100000000000000000000117 /* ActivityCalendarGrid.swift in Sources */,
+				100000000000000000000118 /* TodayViewModel.swift in Sources */,
+				100000000000000000000119 /* TodayView.swift in Sources */,
+				100000000000000000000120 /* CalendarViewModel.swift in Sources */,
+				100000000000000000000121 /* CalendarView.swift in Sources */,
+				100000000000000000000122 /* ProjectsViewModel.swift in Sources */,
+				100000000000000000000123 /* ProjectsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		100000000000000000000801 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		100000000000000000000802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		100000000000000000000803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UX6LM8U38J;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DevLog;
+				GITHUB_OAUTH_CLIENT_ID = Ov23liZSn4gmY4jkrtep;
+				INFOPLIST_FILE = DevLog/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hajaeyun.DevLog;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		100000000000000000000804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UX6LM8U38J;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DevLog;
+				GITHUB_OAUTH_CLIENT_ID = Ov23liZSn4gmY4jkrtep;
+				INFOPLIST_FILE = DevLog/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hajaeyun.DevLog;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		100000000000000000000701 /* Build configuration list for PBXNativeTarget "DevLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000803 /* Debug */,
+				100000000000000000000804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		100000000000000000000702 /* Build configuration list for PBXProject "DevLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000801 /* Debug */,
+				100000000000000000000802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 100000000000000000000601 /* Project object */;
+}
