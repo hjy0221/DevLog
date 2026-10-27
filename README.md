@@ -78,3 +78,37 @@ xcodebuild -project DevLog.xcodeproj \
 ## 라이선스
 
 개인 개발 기록 앱의 MVP입니다. 사용한 Apple SDK와 GitHub API의 각 약관 및 정책을 따라야 합니다.
+
+---
+
+## English
+
+DevLog is a SwiftUI iOS app that organizes GitHub development activity into Today, Calendar, and Projects views.
+
+### Features
+
+- Today: today's commit, PR, issue, and repository counts and activity summary.
+- Calendar: daily activity volume and lists.
+- Projects: recent activity and weekly statistics by repository.
+- GitHub login using Device Flow, preferring the GitHub app with a web fallback; tokens are stored in the iOS Keychain.
+- Real data from GraphQL `ContributionsCollection`, mock data for offline development, and daily notes stored in `AppStorage`.
+
+### Run and connect GitHub
+
+Open `DevLog.xcodeproj` in Xcode, select your Apple Team under Signing & Capabilities, choose an iPhone or simulator, and build and run. The GitHub OAuth Client ID is included in `Info.plist` through the `GITHUB_OAUTH_CLIENT_ID` build setting; do not put a client secret in the app.
+
+Create an OAuth App in GitHub Developer Settings and enable Device Flow. Set its Client ID in Xcode Build Settings and tap GitHub login in the account tab. Enter the code displayed by DevLog in the GitHub app or at `github.com/login/device`. After authorization, the token is stored in Keychain and actual activity is loaded. See the [connection guide](outputs/GitHub-Connection.md) for scopes and permissions.
+
+### Structure and data
+
+`DevLog/App` contains the entry point and tabs; `Domain` contains models; `Services` implements GitHub API, OAuth, Keychain, and mock services; `DesignSystem` contains shared components; `Features` contains the screens; `Tests` checks GraphQL normalization and authentication errors. Views depend on `GitHubActivityServicing`, allowing real and mock services to be swapped.
+
+The app converts daily per-repository commit counts, created PRs, and created issues from `ContributionsCollection` into `DevelopmentActivity` records with repository owner/name, time, original URL, and type. Commit counts remain daily aggregates, not individual commit titles.
+
+### Verification and roadmap
+
+Run the `swiftc` and `xcodebuild` commands in the Korean section above. The checks cover counts, date separation, deduplication, repository identity, HTTP/GraphQL errors, OAuth cancellation, and Keychain storage, updates, and deletion.
+
+Planned work includes refresh-token renewal, a SwiftData activity cache and offline replay, technology stacks and weekly trends from the API, individual commit details and changed-file summaries, and portfolio export.
+
+This is a personal development journal MVP. Apple SDK and GitHub API terms and policies apply.
