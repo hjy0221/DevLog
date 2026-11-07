@@ -4,55 +4,165 @@
 
 ## 日本語
 
-DevLog は GitHub の開発活動を Today、Calendar、Projects に整理する SwiftUI 製 iOS アプリです。
+GitHub開発活動をToday、Calendar、Projects画面の開発日誌にまとめるSwiftUI iOSアプリです。
 
-### 機能
+## 現在の機能
 
-- コミット、PR、issue、リポジトリ数の日別集計と週別統計
-- GitHub Device Flow 認証、Keychain によるトークン保管
-- GraphQL `ContributionsCollection`、オフライン用モック、`AppStorage` による日別メモ
+- Today: 今日のコミット、PR、issue、リポジトリ数と活動のまとめ
+- カレンダー：日付別の活動量と活動のリスト
+- プロジェクト：リポジトリ別の最近の活動と週間統計
+- GitHub ログイン: Device Flow、GitHub アプリ優先実行、Web fallback
+- 安全なトークンアーカイブ：iOS Keychain
+- 実際のデータ：GraphQL `ContributionsCollection`
+- オフライン開発：GitHub接続前のmockデータ
+- 日付別開発ノート：`AppStorage`ベースの保存
 
-### 実行と GitHub 接続
+## 実行
 
-Xcode で `DevLog.xcodeproj` を開き、Signing & Capabilities で Team を選択し、iPhone またはシミュレーターで実行します。`GITHUB_OAUTH_CLIENT_ID` ビルド設定から Client ID が `Info.plist` に含まれます。Client Secret をアプリに入れないでください。
+1. Xcodeで`DevLog.xcodeproj`を開きます。
+2. Signing & Capabilitiesで、自分のApple Teamを選択します。
+3. iPhoneまたはiOS Simulatorを実行先として選択します。
+4. Build and Run を押します。
 
-GitHub Developer Settings で OAuth App を作成し Device Flow を有効にします。Client ID を Xcode に設定し、アプリのアカウント画面でログインします。表示されたコードを GitHub アプリまたは `github.com/login/device` に入力します。権限の詳細は[接続ガイド](outputs/GitHub-Connection.md)を参照してください。
+プロジェクトのGitHub OAuth Client IDは、`GITHUB_OAUTH_CLIENT_ID`ビルド設定を介して`Info.plist`に含まれています。 Client Secret は iOS アプリには入れません。
 
-### 構成と制限
+## GitHub接続
 
-`App` は画面の入口、`Domain` はモデル、`Services` は API・認証・モック、`DesignSystem` は共通 UI、`Features` は各画面、`Tests` は検証コードです。コミットは日別集計であり個々のタイトルには展開しません。検証コマンドは韓国語セクションにあります。トークン更新、オフラインキャッシュ、詳細表示、エクスポートは今後の予定です。
+GitHub Developer Settings で OAuth App を作成し、Device Flow を有効にします。 Client IDをXcode Build Settingsに入力し、アプリのアカウントタブで`GitHub로 로그인`をクリックします。
+
+認証コードはDevLogに表示されます。 GitHubアプリまたはWebで`github.com/login/device`を開き、コードを入力するだけです。承認が完了したら、トークンをKeychainに保存して実際のアクティビティを呼び出します。
+
+詳細な範囲と権限については、[GitHub接続ドキュメント]（outputs/GitHub-Connection.md）を参照してください。
+
+## 構造
+
+```text
+DevLog/
+  App/                  앱 진입점과 탭 구조
+  Domain/               활동, 요약, 저장소 모델
+  Services/             GitHub API, OAuth, Keychain, mock 서비스
+  DesignSystem/         토큰, 공통 컴포넌트, 화면 패턴
+  Features/             Today, Calendar, Projects, Account
+Tests/                  GraphQL 정규화와 인증 오류 검증
+```
+
+画面は`GitHubActivityServicing`プロトコルに依存します。実際のGitHubサービスとmockサービスを交換でき、UIテストとオフライン開発が可能です。
+
+## データの正規化
+
+`ContributionsCollection`は、デポごとの毎日のコミット集計、生成されたPR、生成されたissueを`DevelopmentActivity`に変換します。アクティビティには、リポジトリの`owner/name`、発生時刻、原文URL、アクティビティの種類が含まれます。コミットはGitHub APIが提供する毎日の数量を保持し、個々のコミットタイトルには拡張しません。
+
+## 検証
+
+```sh
+swiftc -parse-as-library \
+  DevLog/Domain/GitHubModels.swift \
+  DevLog/Services/GitHubActivityServicing.swift \
+  DevLog/Services/GitHubAuthentication.swift \
+  DevLog/Services/GitHubContributionsService.swift \
+  Tests/ContributionsChecks.swift \
+  -o work/contributions-checks
+work/contributions-checks
+
+xcodebuild -project DevLog.xcodeproj \
+  -scheme DevLog \
+  -destination 'generic/platform=iOS Simulator' build
+```
+
+検証コードは、集計数、日付分離、重複排除、リポジトリ識別、HTTP/GraphQL エラー、OAuth キャンセル、Keychain 保存・更新・削除を確認します。
+
+## 次のステップ
+
+- 期限切れのGitHubトークンのリフレッシュトークンの更新
+- SwiftDataベースのアクティビティキャッシュとオフライン再生
+- GitHub APIレスポンスベースの技術スタックと毎週の傾向
+- 実際のコミット詳細照会と変更ファイルの要約
+- ポートフォリオ文書のエクスポート
+
+## ライセンス
+
+個人開発記録アプリのMVPです。使用したApple SDKとGitHub APIの各条件とポリシーに従う必要があります。
 
 ## English
 
-DevLog is a SwiftUI iOS app that organizes GitHub development activity into Today, Calendar, and Projects views.
+This is a SwiftUI iOS app that organizes GitHub development activities into a development log on the Today, Calendar, and Projects screens.
 
-### Features
+## Current features
 
-- Today: today's commit, PR, issue, and repository counts and activity summary.
-- Calendar: daily activity volume and lists.
-- Projects: recent activity and weekly statistics by repository.
-- GitHub login using Device Flow, preferring the GitHub app with a web fallback; tokens are stored in the iOS Keychain.
-- Real data from GraphQL `ContributionsCollection`, mock data for offline development, and daily notes stored in `AppStorage`.
+- Today: Summary of today’s commits, PRs, issues, repository numbers and activities
+- Calendar: Activity amount and activity list by date
+- Projects: Recent activities and weekly statistics by repository
+- GitHub login: Device Flow, GitHub app launch first, web fallback
+- Secure token storage: iOS Keychain
+- Real data: GraphQL `ContributionsCollection`
+- Offline development: mock data before connecting to GitHub
+- Development notes by date: saved based on `AppStorage`
 
-### Run and connect GitHub
+## run
 
-Open `DevLog.xcodeproj` in Xcode, select your Apple Team under Signing & Capabilities, choose an iPhone or simulator, and build and run. The GitHub OAuth Client ID is included in `Info.plist` through the `GITHUB_OAUTH_CLIENT_ID` build setting; do not put a client secret in the app.
+1. Open `DevLog.xcodeproj` in Xcode.
+2. Select your Apple Team under Signing & Capabilities.
+3. Select iPhone or iOS Simulator as the launch target.
+4. Click Build and Run.
 
-Create an OAuth App in GitHub Developer Settings and enable Device Flow. Set its Client ID in Xcode Build Settings and tap GitHub login in the account tab. Enter the code displayed by DevLog in the GitHub app or at `github.com/login/device`. After authorization, the token is stored in Keychain and actual activity is loaded. See the [connection guide](outputs/GitHub-Connection.md) for scopes and permissions.
+Your project's GitHub OAuth Client ID is included in `Info.plist` via the `GITHUB_OAUTH_CLIENT_ID` build settings. The Client Secret is not included in the iOS app.
 
-### Structure and data
+## GitHub connection
 
-`DevLog/App` contains the entry point and tabs; `Domain` contains models; `Services` implements GitHub API, OAuth, Keychain, and mock services; `DesignSystem` contains shared components; `Features` contains the screens; `Tests` checks GraphQL normalization and authentication errors. Views depend on `GitHubActivityServicing`, allowing real and mock services to be swapped.
+Create an OAuth App in GitHub Developer Settings and enable Device Flow. Enter your Client ID into Xcode Build Settings, then press `GitHub로 로그인` in the app's Account tab.
 
-The app converts daily per-repository commit counts, created PRs, and created issues from `ContributionsCollection` into `DevelopmentActivity` records with repository owner/name, time, original URL, and type. Commit counts remain daily aggregates, not individual commit titles.
+The verification code will be displayed in DevLog. Just open `github.com/login/device` in the GitHub app or on the web and enter the code. Once approved, save the token to Keychain and load the actual activity.
 
-### Verification and roadmap
+For detailed scope and permissions, please refer to [GitHub Connection Documentation](outputs/GitHub-Connection.md).
 
-Run the `swiftc` and `xcodebuild` commands in the Korean section above. The checks cover counts, date separation, deduplication, repository identity, HTTP/GraphQL errors, OAuth cancellation, and Keychain storage, updates, and deletion.
+## Structure
 
-Planned work includes refresh-token renewal, a SwiftData activity cache and offline replay, technology stacks and weekly trends from the API, individual commit details and changed-file summaries, and portfolio export.
+```text
+DevLog/
+  App/                  앱 진입점과 탭 구조
+  Domain/               활동, 요약, 저장소 모델
+  Services/             GitHub API, OAuth, Keychain, mock 서비스
+  DesignSystem/         토큰, 공통 컴포넌트, 화면 패턴
+  Features/             Today, Calendar, Projects, Account
+Tests/                  GraphQL 정규화와 인증 오류 검증
+```
 
-This is a personal development journal MVP. Apple SDK and GitHub API terms and policies apply.
+The screen relies on the `GitHubActivityServicing` protocol. The actual GitHub service and mock service can be replaced, allowing UI testing and offline development.
+
+## Data normalization
+
+Convert daily commit aggregation by repository, created PRs, and created issues from `ContributionsCollection` to `DevelopmentActivity`. The activity includes the repository's `owner/name`, the time it occurred, the source URL, and the activity type. Commits maintain the daily quantity provided by the GitHub API and do not scale with individual commit titles.
+
+## Verification
+
+```sh
+swiftc -parse-as-library \
+  DevLog/Domain/GitHubModels.swift \
+  DevLog/Services/GitHubActivityServicing.swift \
+  DevLog/Services/GitHubAuthentication.swift \
+  DevLog/Services/GitHubContributionsService.swift \
+  Tests/ContributionsChecks.swift \
+  -o work/contributions-checks
+work/contributions-checks
+
+xcodebuild -project DevLog.xcodeproj \
+  -scheme DevLog \
+  -destination 'generic/platform=iOS Simulator' build
+```
+
+Validation code verifies aggregate counts, date separation, deduplication, storage identification, HTTP/GraphQL errors, OAuth revocation, and Keychain save/update/delete.
+
+## Next steps
+
+- Refresh token renewal of expiring GitHub tokens
+- SwiftData-based activity cache and offline playback
+- Technology stack and weekly trends based on GitHub API responses
+- View actual commit details and summarize changed files
+- Portfolio document export
+
+## License
+
+MVP of the personal development history app. You must follow the respective terms and policies of the Apple SDK and GitHub API you use.
 
 ## 한국어
 
