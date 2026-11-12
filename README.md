@@ -4,6 +4,8 @@
 
 ## 日本語
 
+[日本語](https://github.com/hjy0221/DevLog#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/DevLog#english) · [한국어](https://github.com/hjy0221/DevLog#%ED%95%9C%EA%B5%AD%EC%96%B4)
+
 GitHub開発活動をToday、Calendar、Projects画面の開発日誌にまとめるSwiftUI iOSアプリです。
 
 ## 現在の機能
@@ -85,6 +87,8 @@ xcodebuild -project DevLog.xcodeproj \
 
 ## English
 
+[日本語](https://github.com/hjy0221/DevLog#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/DevLog#english) · [한국어](https://github.com/hjy0221/DevLog#%ED%95%9C%EA%B5%AD%EC%96%B4)
+
 This is a SwiftUI iOS app that organizes GitHub development activities into a development log on the Today, Calendar, and Projects screens.
 
 ## Current features
@@ -165,6 +169,8 @@ Validation code verifies aggregate counts, date separation, deduplication, stora
 MVP of the personal development history app. You must follow the respective terms and policies of the Apple SDK and GitHub API you use.
 
 ## 한국어
+
+[日本語](https://github.com/hjy0221/DevLog#%E6%97%A5%E6%9C%AC%E8%AA%9E) · [English](https://github.com/hjy0221/DevLog#english) · [한국어](https://github.com/hjy0221/DevLog#%ED%95%9C%EA%B5%AD%EC%96%B4)
 
 GitHub 개발 활동을 Today, Calendar, Projects 화면의 개발 일지로 정리하는 SwiftUI iOS 앱입니다.
 
